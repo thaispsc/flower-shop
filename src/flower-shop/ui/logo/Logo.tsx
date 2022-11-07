@@ -3,7 +3,7 @@ import { Box } from '@mui/system'
 
 const Logo = () => {
   return (
-    <Box display='flex' gap='7px'>
+    <Box display='flex' gap='5px'>
       <Typography variant='h2' fontWeight={500} color='#FF8F52'>
         Flower
       </Typography>
