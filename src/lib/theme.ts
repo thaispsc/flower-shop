@@ -15,8 +15,14 @@ const theme = createTheme({
     },
   },
   palette: {
+    background: {
+      default: '#000000',
+    },
     primary: {
       main: '#000000',
+    },
+    secondary: {
+      main: '#ffffff',
     },
   },
 })
