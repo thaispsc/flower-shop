@@ -27,8 +27,8 @@ const Header = () => {
     setAnchorElNav(null)
   }
   return (
-    <AppBar position='fixed' color='secondary' elevation={0}>
-      <Container maxWidth='xl'>
+    <AppBar color='secondary' elevation={0}>
+      <Container maxWidth='lg'>
         <Toolbar
           sx={{
             display: 'flex',
@@ -100,7 +100,16 @@ const Header = () => {
                   },
                 }}
               >
-                <Typography variant='body1'>{page}</Typography>
+                <Typography
+                  variant='body1'
+                  sx={{
+                    '&:hover': {
+                      color: '#FF8F52',
+                    },
+                  }}
+                >
+                  {page}
+                </Typography>
               </Button>
             ))}
           </Box>
