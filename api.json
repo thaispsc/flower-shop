@@ -1,0 +1,25 @@
+{
+  "flowers": [
+    {
+    "id": 1,
+    "name": "Daisy",
+    "image": "src/assets/images/Daisy.png"
+    },
+    {
+    "id": 2,
+    "name": "Sun Flower",
+    "image": "src/assets/images/SunFlower.png"
+    },
+    {
+    "id": 3,
+    "name": "White Rose",
+    "image": "src/assets/images/WhiteRose.png"
+    },
+    {
+    "id": 4,
+    "name": "Periwinkle",
+    "image": "src/assets/images/Periwinkle.png"
+    }
+]
+
+}
