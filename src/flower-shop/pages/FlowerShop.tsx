@@ -1,13 +1,27 @@
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import Banner from '../ui/banner/Banner'
+import { BestSellers } from '../ui/best-sellers/BestSellers'
+import { FlowerCard } from '../ui/flower-card/FlowerCard'
 import Header from '../ui/header/Header'
 
-const FlowerShop = () => {
+export interface FlowerShopProps {
+  flowers: Flower[]
+}
+
+const FlowerShop = ({ flowers }: FlowerShopProps) => {
   return (
     <>
       <Header />
       <Container maxWidth='lg' sx={{ marginTop: '175px' }}>
         <Banner />
+        <BestSellers />
+        <Box display='flex' marginTop={4} gap={3}>
+          {flowers.map(flower => (
+            <>
+              <FlowerCard flower={flower} />
+            </>
+          ))}
+        </Box>
       </Container>
     </>
   )
