@@ -10,8 +10,11 @@ import BrowseButton from './BrowseButton'
 
 const Banner = () => {
   return (
-    <Grid container justifyContent='space-between'>
-      <Grid item xs={4}>
+    <Grid
+      container
+      sx={{ justifyContent: { xs: 'center', md: 'space-between' } }}
+    >
+      <Grid item xs={12} md={4}>
         <Typography variant='h1' color='#121212'>
           Flowers, &#x1F33B; what the world needs
         </Typography>
@@ -20,7 +23,7 @@ const Banner = () => {
         </Typography>
         <BrowseButton />
       </Grid>
-      <Grid item xs={8}>
+      <Grid item md={8} sx={{ display: { xs: 'none', md: 'block' } }}>
         <Box display='flex' flexWrap='wrap' gap={2.5} justifyContent='flex-end'>
           <Image src={Flower1} alt={'Flower'} />
           <Image src={Flower2} alt={'Flower'} />
