@@ -1,18 +1,39 @@
-import { useEffect, useState } from 'react'
 import FlowerShop from '../flower-shop/pages/FlowerShop'
+import Error from '../lib/components/Error'
 import { getFlowers } from '../services/flowers'
 
-const Page = () => {
-  const [flowersList, setFlowersList] = useState<Flower[]>([] as Flower[])
-
-  useEffect(() => {
-    const renderFlowers = async () => {
-      const flowers = await getFlowers()
-      setFlowersList(flowers)
+export const getServerSideProps = async () => {
+  try {
+    const flowersList = await getFlowers()
+    return {
+      props: {
+        error: null,
+        flowersList,
+      },
     }
-    renderFlowers()
-  }, [])
-  return <FlowerShop flowers={flowersList} />
+  } catch (e) {
+    const error = e as Error
+    return {
+      props: {
+        error,
+        flowersList: null,
+      },
+    }
+  }
+}
+
+type PageProps = {
+  error: Error | null
+  flowersList: Flower[] | null
+}
+
+const Page = ({ error, flowersList }: PageProps) => {
+  return (
+    <>
+      {error && <Error message={error.message} />}
+      {flowersList && <FlowerShop flowers={flowersList} />}
+    </>
+  )
 }
 
 export default Page
