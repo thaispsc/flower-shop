@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "server": "json-server --watch src/api.json --port 3333"
   },
   "dependencies": {
     "-": "^0.0.1",
