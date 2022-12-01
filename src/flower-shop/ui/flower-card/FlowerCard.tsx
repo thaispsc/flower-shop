@@ -7,7 +7,6 @@ interface FlowerCardProps {
 }
 
 export const FlowerCard = ({ flower }: FlowerCardProps) => {
-  console.log(flower)
   return (
     <Card key={flower.id} sx={{ maxWidth: 287 }}>
       <Image src={flower.image} alt={'Flower'} width={320} height={250} />
