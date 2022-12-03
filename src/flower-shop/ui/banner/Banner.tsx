@@ -19,7 +19,7 @@ const Banner = () => {
           Flowers, &#x1F33B; what the world needs
         </Typography>
         <Typography variant='body1' marginY={4.5} color='#838383'>
-          Browse between hounders of flowers
+          Browse between hundreds of flowers
         </Typography>
         <BrowseButton />
       </Grid>
