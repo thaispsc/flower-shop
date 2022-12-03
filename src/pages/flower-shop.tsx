@@ -15,7 +15,7 @@ export const getServerSideProps = async () => {
     const error = e as Error
     return {
       props: {
-        error,
+        error: JSON.parse(JSON.stringify(error)),
         flowersList: null,
       },
     }
