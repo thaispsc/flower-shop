@@ -3,8 +3,12 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import FlowerShop from '../../src/pages/flower-shop'
 import { getServerSideProps } from '../../src/pages/flower-shop'
-import { mockGetFlowersEndpoint } from '../__stubs__/http/endpoints/mockGetFlowersEndpoint'
+import {
+  buildFlowersListFoundResponse,
+  mockGetFlowersEndpoint,
+} from '../__stubs__/http/endpoints/mockGetFlowersEndpoint'
 import { mockServer } from '../__stubs__/http/mockServer'
+import FlowerFixture from '../__fixtures__/flowerFixture'
 
 const renderFlowerShopPage = async () => {
   const { props } = await getServerSideProps()
@@ -23,16 +27,25 @@ describe('getServerSideProps', () => {
 })
 
 describe('flower-shop', () => {
+  const flowersList: Flower[] = [
+    new FlowerFixture().build(),
+    new FlowerFixture().build(),
+    new FlowerFixture().build(),
+    new FlowerFixture().build(),
+  ]
   it('should render the whole flower shop page', async () => {
-    const { request: mockedGetFlowersEndpoint } = mockGetFlowersEndpoint()
+    const getFlowersListOKResponse = buildFlowersListFoundResponse(flowersList)
+    const { request: mockedGetFlowersEndpoint } = mockGetFlowersEndpoint(
+      getFlowersListOKResponse,
+    )
     mockServer.use(...[mockedGetFlowersEndpoint])
+    console.log(mockedGetFlowersEndpoint)
 
     await renderFlowerShopPage()
 
-    const flowersNameList = ['Daisy', 'Sun Flower', 'White Rose', 'Orchild']
-    flowersNameList.forEach(flowerName => {
-      const flowerNameText = screen.getByText(flowerName)
-      expect(flowerNameText).toBeVisible()
+    flowersList.forEach(flower => {
+      const flowerName = screen.getByText(flower.name)
+      expect(flowerName).toBeVisible()
     })
   })
 })
