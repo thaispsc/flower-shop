@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import FlowerFixture from '../../../__fixtures__/flowerFixture'
+import FlowersListFixture from '../../../__fixtures__/flowersListFixture'
 import { DataFound, DataNotFound } from './types'
 
 type MockProps = DataFound | DataNotFound
@@ -12,12 +12,7 @@ export const mockGetFlowersEndpoint = ({ status, data }: MockProps) => ({
 })
 
 export const buildFlowersListFoundResponse = (
-  flowersList: Flower[] = [
-    new FlowerFixture().build(),
-    new FlowerFixture().build(),
-    new FlowerFixture().build(),
-    new FlowerFixture().build(),
-  ],
+  flowersList: Flower[] = new FlowersListFixture().build(),
 ) => ({
   status: 200,
   data: flowersList,

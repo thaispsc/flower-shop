@@ -9,6 +9,7 @@ import {
 } from '../__stubs__/http/endpoints/mockGetFlowersEndpoint'
 import { mockServer } from '../__stubs__/http/mockServer'
 import FlowerFixture from '../__fixtures__/flowerFixture'
+import FlowersListFixture from '../__fixtures__/flowersListFixture'
 
 const renderFlowerShopPage = async () => {
   const { props } = await getServerSideProps()
@@ -27,19 +28,13 @@ describe('getServerSideProps', () => {
 })
 
 describe('flower-shop', () => {
-  const flowersList: Flower[] = [
-    new FlowerFixture().build(),
-    new FlowerFixture().build(),
-    new FlowerFixture().build(),
-    new FlowerFixture().build(),
-  ]
+  const flowersList: Flower[] = new FlowersListFixture().build()
   it('should render the whole flower shop page', async () => {
     const getFlowersListOKResponse = buildFlowersListFoundResponse(flowersList)
     const { request: mockedGetFlowersEndpoint } = mockGetFlowersEndpoint(
       getFlowersListOKResponse,
     )
     mockServer.use(...[mockedGetFlowersEndpoint])
-    console.log(mockedGetFlowersEndpoint)
 
     await renderFlowerShopPage()
 
