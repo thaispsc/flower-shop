@@ -5,10 +5,10 @@ import FlowerShop from '../../src/pages/flower-shop'
 import { getServerSideProps } from '../../src/pages/flower-shop'
 import {
   buildFlowersListFoundResponse,
+  buildFlowersListNotFoundResponse,
   mockGetFlowersEndpoint,
 } from '../__stubs__/http/endpoints/mockGetFlowersEndpoint'
 import { mockServer } from '../__stubs__/http/mockServer'
-import FlowerFixture from '../__fixtures__/flowerFixture'
 import FlowersListFixture from '../__fixtures__/flowersListFixture'
 
 const renderFlowerShopPage = async () => {
@@ -42,5 +42,17 @@ describe('flower-shop', () => {
       const flowerName = screen.getByText(flower.name)
       expect(flowerName).toBeVisible()
     })
+  })
+
+  it('should render null if flowers list is not found', async () => {
+    const getFlowersListNOTOKResponse = buildFlowersListNotFoundResponse()
+    const { request: notFoundmockedGetFlowersEndpoint } =
+      mockGetFlowersEndpoint(getFlowersListNOTOKResponse)
+
+    mockServer.use(...[notFoundmockedGetFlowersEndpoint])
+
+    await renderFlowerShopPage()
+    const errorElem = screen.getByText('Something bad happened.')
+    expect(errorElem).toBeVisible()
   })
 })
