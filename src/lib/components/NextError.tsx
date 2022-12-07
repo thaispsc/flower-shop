@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Error({ message }: { message?: string }) {
+export default function NextError({ message }: { message?: string }) {
   return (
     <div>
       <p>Something bad happened.</p>

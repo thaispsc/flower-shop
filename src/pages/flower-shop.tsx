@@ -1,5 +1,5 @@
 import FlowerShop from '../flower-shop/pages/FlowerShop'
-import Error from '../lib/components/Error'
+import NextError from '../lib/components/NextError'
 import { getFlowers } from '../services/flowers'
 
 export const getServerSideProps = async () => {
@@ -30,7 +30,7 @@ type PageProps = {
 const Page = ({ error, flowersList }: PageProps) => {
   return (
     <>
-      {error && <Error message={error.message} />}
+      {error && <NextError message={error.message} />}
       {flowersList && <FlowerShop flowers={flowersList} />}
     </>
   )
