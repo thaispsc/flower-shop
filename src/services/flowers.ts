@@ -9,3 +9,13 @@ export const getFlowers = async () => {
     throw err
   }
 }
+
+export const getFlowerById = async (flowerId: string) => {
+  try {
+    const response = await api.get(`/flowers/${flowerId}`)
+    return response.data
+  } catch (error) {
+    const err = new Error('Failed to get flower data')
+    throw err
+  }
+}
