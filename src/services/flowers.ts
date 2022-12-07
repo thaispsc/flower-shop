@@ -5,6 +5,7 @@ export const getFlowers = async () => {
     const response = await api.get('/flowers')
     return response.data
   } catch (error) {
-    alert(`Error: ${error.response.data}`)
+    const err = new Error('Failed to get flowers list data')
+    throw err
   }
 }
