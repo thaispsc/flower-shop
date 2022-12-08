@@ -1,1 +1,0 @@
-export { getFlowerById } from './getFlowerByid'
