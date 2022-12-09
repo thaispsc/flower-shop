@@ -4,6 +4,7 @@ const theme = createTheme({
   typography: {
     h1: { fontFamily: 'Roboto', fontSize: '3.75rem', fontWeight: 400 },
     h2: { fontFamily: 'Roboto', fontSize: '2rem', fontWeight: 400 },
+    h5: { fontFamily: 'Roboto', fontSize: '1.375rem', fontWeight: 400 },
     body1: {
       fontFamily: 'Roboto',
       fontSize: '1.25rem',
