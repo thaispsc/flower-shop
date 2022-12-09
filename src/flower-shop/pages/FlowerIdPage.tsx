@@ -1,4 +1,6 @@
+import { Container } from '@mui/material'
 import React from 'react'
+import Header from '../ui/header/Header'
 
 interface FlowerIdPageProps {
   flower: Flower
@@ -7,7 +9,10 @@ interface FlowerIdPageProps {
 const FlowerIdPage = ({ flower }: FlowerIdPageProps) => {
   return (
     <>
-      <h1>{flower.name}</h1>
+      <Header />
+      <Container maxWidth='lg' sx={{ marginTop: '175px' }}>
+        <h1>{flower.name}</h1>
+      </Container>
     </>
   )
 }
