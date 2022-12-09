@@ -16,7 +16,7 @@ export const FlowerCard = ({ flower }: FlowerCardProps) => {
           {flower.name}
         </Typography>
         <Box display='flex' justifyContent='space-between' alignItems='center'>
-          <Typography variant='body2' color='text.secondary'>
+          <Typography color='#838383' fontSize='18px'>
             R${flower.price}
           </Typography>
           <Button>
