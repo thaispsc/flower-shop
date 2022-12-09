@@ -4,25 +4,32 @@
     "id": "1",
     "name": "Daisy",
     "image": "https://images.pexels.com/photos/11420027/pexels-photo-11420027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": "5,00"
+    "price": "5,00",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
     },
     {
     "id": "2",
     "name": "Sun Flower",
     "image": "https://images.pexels.com/photos/5551654/pexels-photo-5551654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": "3,00"
+    "price": "3,00",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+
     },
     {
     "id": "3",
     "name": "White Rose",
     "image": "https://images.pexels.com/photos/8569653/pexels-photo-8569653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": "4,50"
+    "price": "4,50",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+
     },
     {
     "id": "4",
     "name": "Orchild",
     "image": "https://images.pexels.com/photos/12573405/pexels-photo-12573405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": "3,75"
+    "price": "3,75",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+
     }
 ]
 

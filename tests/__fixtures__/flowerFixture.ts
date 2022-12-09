@@ -6,6 +6,7 @@ function generateDefaultFlowerParams(): Flower {
     name: faker.commerce.productName(),
     image: faker.internet.url(),
     price: Number(faker.commerce.price()),
+    description: faker.commerce.productDescription(),
   }
 }
 
