@@ -1,6 +1,6 @@
 interface BasicResponse {
   status: number
-  data: Flower[]
+  data: Flower | Flower[]
 }
 
 interface BasicResponseWithError {
