@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
 import Image from 'next/image'
-import { Cart } from '../flower-card/Cart'
+import { Cart } from '../../../lib/components/Cart'
 
 interface FlowerCardProps {
   flower: Flower
@@ -20,7 +20,7 @@ export const FlowerCard = ({ flower }: FlowerCardProps) => {
             R${flower.price}
           </Typography>
           <Button>
-            <Cart />
+            <Cart fill='#FF8F52' />
             <Typography color='#FF8F52' fontSize='18px' marginLeft={1}>
               Add to cart
             </Typography>
