@@ -4,7 +4,7 @@ import { DataFound, DataNotFound } from './types'
 
 type MockProps = DataFound | DataNotFound
 
-export const mockGetFlowersEndpoint = ({ status, data }: MockProps) => ({
+export const mockGetAllFlowersEndpoint = ({ status, data }: MockProps) => ({
   ...data,
   request: rest.get('http://localhost:3333/flowers', (_req, res, ctx) => {
     return res(ctx.status(status), ctx.json(data))
