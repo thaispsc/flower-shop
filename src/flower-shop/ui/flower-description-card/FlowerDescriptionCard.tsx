@@ -12,7 +12,7 @@ const FlowerDescriptionCard = ({ flower }: FlowerDescriptionCardProps) => {
   return (
     <>
       <Card sx={{ display: 'flex', padding: '50px', gap: '60px' }}>
-        <Image src={flower.image} alt={'Flower'} width={320} height={250} />
+        <Image src={flower.image} alt={'Flower'} width={320} height={320} />
 
         <CardContent sx={{ padding: 0 }}>
           <Typography
