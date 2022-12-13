@@ -35,6 +35,10 @@ const Header = () => {
             display: 'flex',
             justifyContent: 'space-between',
             height: '100px',
+            paddingX: '0',
+            '&.MuiToolbar-root': {
+              padding: '0',
+            },
           }}
         >
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
