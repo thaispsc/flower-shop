@@ -4,7 +4,7 @@ import { DataFound, DataNotFound } from './types'
 
 type MockProps = DataFound | DataNotFound
 
-export const mockGetFlowerEndpoint = (
+export const mockGetFlowerByIdEndpoint = (
   flowerId: string,
   { status, data }: MockProps,
 ) => ({
