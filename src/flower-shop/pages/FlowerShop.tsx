@@ -15,7 +15,7 @@ const FlowerShop = ({ flowers }: FlowerShopProps) => {
       <Container maxWidth='lg' sx={{ marginTop: '175px' }}>
         <Banner />
         <BestSellers />
-        <Box display='flex' marginTop={4} gap={3}>
+        <Box display='flex' marginTop={4} justifyContent='space-between'>
           {flowers.map(flower => (
             <>
               <FlowerCard flower={flower} />

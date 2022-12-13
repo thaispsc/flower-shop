@@ -9,10 +9,10 @@ interface FlowerCardProps {
 export const FlowerCard = ({ flower }: FlowerCardProps) => {
   return (
     <Link href={`/flowers/${flower.id}`} underline='none'>
-      <Card key={flower.id} sx={{ maxWidth: 287 }}>
-        <Image src={flower.image} alt={'Flower'} width={320} height={250} />
+      <Card key={flower.id} sx={{ maxWidth: 287, padding: '15px' }}>
+        <Image src={flower.image} alt={'Flower'} width={240} height={240} />
 
-        <CardContent>
+        <CardContent sx={{ padding: '15px 0 0 0' }}>
           <Typography gutterBottom variant='h5' component='div'>
             {flower.name}
           </Typography>
