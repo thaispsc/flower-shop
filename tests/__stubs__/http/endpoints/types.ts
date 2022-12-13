@@ -1,6 +1,6 @@
-interface BasicResponse {
+interface BasicResponse<T> {
   status: number
-  data: Flower | Flower[]
+  data: T
 }
 
 interface BasicResponseWithError {
@@ -10,6 +10,6 @@ interface BasicResponseWithError {
   }
 }
 
-export type DataFound = BasicResponse
+export type DataFound<T> = BasicResponse<T>
 
 export type DataNotFound = BasicResponseWithError

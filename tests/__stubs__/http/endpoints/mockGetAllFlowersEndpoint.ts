@@ -2,7 +2,7 @@ import { rest } from 'msw'
 import FlowersListFixture from '../../../__fixtures__/flowersListFixture'
 import { DataFound, DataNotFound } from './types'
 
-type MockProps = DataFound | DataNotFound
+type MockProps = DataFound<Flower[]> | DataNotFound
 
 export const mockGetAllFlowersEndpoint = ({ status, data }: MockProps) => ({
   ...data,

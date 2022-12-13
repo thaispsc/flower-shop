@@ -2,7 +2,7 @@ import { rest } from 'msw'
 import FlowerFixture from '../../../__fixtures__/flowerFixture'
 import { DataFound, DataNotFound } from './types'
 
-type MockProps = DataFound | DataNotFound
+type MockProps = DataFound<Flower> | DataNotFound
 
 export const mockGetFlowerByIdEndpoint = (
   flowerId: string,
@@ -10,7 +10,7 @@ export const mockGetFlowerByIdEndpoint = (
 ) => ({
   ...data,
   request: rest.get(
-    `http://localhost:3333/flowers/${flowerId}`,
+    `http://localhost:3333/flowers/:flowerId`,
     (_req, res, ctx) => {
       return res(ctx.status(status), ctx.json(data))
     },
