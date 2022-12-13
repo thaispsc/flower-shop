@@ -1,7 +1,8 @@
 import { Button, Card, CardContent, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import Image from 'next/image'
-import { Cart } from '../flower-card/Cart'
+import { Star } from '../../../lib/components/Star'
+import { Cart } from '../../../lib/components/Cart'
 
 interface FlowerDescriptionCardProps {
   flower: Flower
@@ -31,16 +32,24 @@ const FlowerDescriptionCard = ({ flower }: FlowerDescriptionCardProps) => {
           >
             {flower.description}
           </Typography>
+          <Box marginTop={2}>
+            <Box display='flex' gap='10px' alignItems='center'>
+              <Star />
+              <Typography>4.5/5</Typography>
+            </Box>
+            <Typography color='#838383' fontSize='18px'>
+              (101 people opinion)
+            </Typography>
+          </Box>
           <Box
             display='flex'
             justifyContent='space-between'
             alignItems='center'
+            marginTop={2}
           >
-            <Typography color='#838383' fontSize='18px'>
-              R${flower.price}
-            </Typography>
+            <Typography>{flower.price}$ / each</Typography>
             <Button variant='contained' color='primary'>
-              <Cart />
+              <Cart fill='#ffffff' />
               <Typography color='#FFFFFF' fontSize='18px' marginLeft={1}>
                 Add to cart
               </Typography>
