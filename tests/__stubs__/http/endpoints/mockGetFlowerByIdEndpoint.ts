@@ -17,14 +17,14 @@ export const mockGetFlowerByIdEndpoint = (
   ),
 })
 
-export const buildFlowersListFoundResponse = (
+export const buildFlowerFoundResponse = (
   flower: Flower = new FlowerFixture().build(),
 ) => ({
   status: 200,
   data: flower,
 })
 
-export const buildFlowersListNotFoundResponse = () => ({
+export const buildFlowerNotFoundResponse = () => ({
   status: 404,
   data: {
     error: 'Flowers list not found',
