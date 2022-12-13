@@ -21,7 +21,7 @@ const renderFlowerShopPage = async () => {
 }
 
 describe('getServerSideProps', () => {
-  it('should return a array of objects', async () => {
+  it('should return an array of objects', async () => {
     const { props } = await getServerSideProps()
     expect(props).toBeDefined()
   })
