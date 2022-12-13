@@ -6,8 +6,8 @@ import { getServerSideProps } from '../../src/pages/flower-shop'
 import {
   buildFlowersListFoundResponse,
   buildFlowersListNotFoundResponse,
-  mockGetFlowersEndpoint,
-} from '../__stubs__/http/endpoints/mockGetFlowersEndpoint'
+  mockGetAllFlowersEndpoint,
+} from '../__stubs__/http/endpoints/mockGetAllFlowersEndpoint'
 import { mockServer } from '../__stubs__/http/mockServer'
 import FlowersListFixture from '../__fixtures__/flowersListFixture'
 
@@ -31,10 +31,10 @@ describe('flower-shop', () => {
   const flowersList: Flower[] = new FlowersListFixture().build()
   it('should render the whole flower shop page', async () => {
     const getFlowersListOKResponse = buildFlowersListFoundResponse(flowersList)
-    const { request: mockedGetFlowersEndpoint } = mockGetFlowersEndpoint(
+    const { request: mockedGetAllFlowersEndpoint } = mockGetAllFlowersEndpoint(
       getFlowersListOKResponse,
     )
-    mockServer.use(...[mockedGetFlowersEndpoint])
+    mockServer.use(...[mockedGetAllFlowersEndpoint])
 
     await renderFlowerShopPage()
 
@@ -46,10 +46,10 @@ describe('flower-shop', () => {
 
   it('should render null if flowers list is not found', async () => {
     const getFlowersListNOTOKResponse = buildFlowersListNotFoundResponse()
-    const { request: notFoundmockedGetFlowersEndpoint } =
-      mockGetFlowersEndpoint(getFlowersListNOTOKResponse)
+    const { request: notFoundmockedGetAllFlowersEndpoint } =
+      mockGetAllFlowersEndpoint(getFlowersListNOTOKResponse)
 
-    mockServer.use(...[notFoundmockedGetFlowersEndpoint])
+    mockServer.use(...[notFoundmockedGetAllFlowersEndpoint])
 
     await renderFlowerShopPage()
     const errorElem = screen.getByText('Something bad happened.')
