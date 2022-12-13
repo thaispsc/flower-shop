@@ -8,6 +8,7 @@ import {
   MenuItem,
   Typography,
   Container,
+  Link,
 } from '@mui/material'
 import Logo from '../logo/Logo'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -37,7 +38,9 @@ const Header = () => {
           }}
         >
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Logo />
+            <Link href='/flower-shop' underline='none'>
+              <Logo />
+            </Link>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
