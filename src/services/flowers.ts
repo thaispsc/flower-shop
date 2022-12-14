@@ -1,6 +1,6 @@
 import { api } from './config'
 
-export const getFlowers = async () => {
+export const getAllFlowers = async () => {
   try {
     const response = await api.get('/flowers')
     return response.data

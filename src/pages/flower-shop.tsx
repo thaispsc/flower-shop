@@ -1,10 +1,10 @@
 import FlowerShop from '../flower-shop/pages/FlowerShop'
 import NextError from '../lib/components/NextError'
-import { getFlowers } from '../services/flowers'
+import { getAllFlowers } from '../services/flowers'
 
 export const getServerSideProps = async () => {
   try {
-    const flowersList = await getFlowers()
+    const flowersList = await getAllFlowers()
     return {
       props: {
         error: null,
