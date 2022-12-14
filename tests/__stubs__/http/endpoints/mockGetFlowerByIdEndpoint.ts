@@ -27,6 +27,6 @@ export const buildFlowerFoundResponse = (
 export const buildFlowerNotFoundResponse = () => ({
   status: 404,
   data: {
-    error: 'Flowers list not found',
+    error: 'Flower not found',
   },
 })
