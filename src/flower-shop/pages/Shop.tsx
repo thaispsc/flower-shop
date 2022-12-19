@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import React from 'react'
 import { FlowerCard } from '../ui/flower-card/FlowerCard'
 import Header from '../ui/header/Header'
