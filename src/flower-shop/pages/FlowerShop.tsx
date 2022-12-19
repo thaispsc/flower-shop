@@ -9,6 +9,8 @@ export interface FlowerShopProps {
 }
 
 const FlowerShop = ({ flowers }: FlowerShopProps) => {
+  const bestSellersFlowers = flowers.slice(0, 4)
+
   return (
     <>
       <Header />
@@ -16,7 +18,7 @@ const FlowerShop = ({ flowers }: FlowerShopProps) => {
         <Banner />
         <BestSellers />
         <Box display='flex' marginTop={4} justifyContent='space-between'>
-          {flowers.map(flower => (
+          {bestSellersFlowers.map(flower => (
             <>
               <FlowerCard flower={flower} />
             </>
