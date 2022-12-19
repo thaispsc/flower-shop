@@ -16,7 +16,12 @@ import IconButton from '@mui/material/IconButton'
 import { Cart } from './Cart'
 import { User } from './User'
 
-const PagesLinks = ['Home', 'Shop', 'Blog', 'About']
+const PagesLinks = [
+  { name: 'Home', link: '/flower-shop' },
+  { name: 'Shop', link: '/shop' },
+  { name: 'Blog', link: '#' },
+  { name: 'About', link: '#' },
+]
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
@@ -73,10 +78,14 @@ const Header = () => {
               }}
             >
               <MenuItem>
-                <Typography>Home</Typography>
+                <Link href='/flower-shop' underline='none'>
+                  <Typography>Home</Typography>
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Typography>Shop</Typography>
+                <Link href='/flower-shop' underline='none'>
+                  <Typography>Shop</Typography>
+                </Link>
               </MenuItem>
               <MenuItem>
                 <Typography>Blog</Typography>
@@ -98,7 +107,7 @@ const Header = () => {
           >
             {PagesLinks.map(page => (
               <Button
-                key={page}
+                key={page.name}
                 disableRipple
                 disableFocusRipple
                 sx={{
@@ -107,16 +116,18 @@ const Header = () => {
                   },
                 }}
               >
-                <Typography
-                  variant='body1'
-                  sx={{
-                    '&:hover': {
-                      color: '#FF8F52',
-                    },
-                  }}
-                >
-                  {page}
-                </Typography>
+                <Link href={page.link} underline='none'>
+                  <Typography
+                    variant='body1'
+                    sx={{
+                      '&:hover': {
+                        color: '#FF8F52',
+                      },
+                    }}
+                  >
+                    {page.name}
+                  </Typography>
+                </Link>
               </Button>
             ))}
           </Box>
