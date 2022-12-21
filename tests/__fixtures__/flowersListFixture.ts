@@ -6,7 +6,7 @@ export default class FlowersListFixture {
 
   constructor() {
     this.flowersList = Array.from({
-      length: faker.datatype.number({ min: 1, max: 10 }),
+      length: faker.datatype.number({ min: 1, max: 4 }),
     }).map(() => new FlowerFixture().build())
   }
 
