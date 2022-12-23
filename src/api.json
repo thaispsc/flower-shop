@@ -12,7 +12,12 @@
       "name": "Sun Flower",
       "image": "https://images.pexels.com/photos/5551654/pexels-photo-5551654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,00",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "review": {
+        "author-name": "Maria",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 3
+      }
     },
     {
       "id": "3",
