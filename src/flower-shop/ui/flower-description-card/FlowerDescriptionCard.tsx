@@ -9,6 +9,17 @@ interface FlowerDescriptionCardProps {
 }
 
 const FlowerDescriptionCard = ({ flower }: FlowerDescriptionCardProps) => {
+  const starAverage = () => {
+    let totalStars = 0
+    for (let i = 0; i < flower.reviews.length; i++) {
+      totalStars += flower.reviews[i].stars
+    }
+
+    const average = totalStars / flower.reviews.length
+
+    return average
+  }
+
   return (
     <>
       <Card sx={{ display: 'flex', padding: '50px', gap: '60px' }}>
@@ -35,10 +46,10 @@ const FlowerDescriptionCard = ({ flower }: FlowerDescriptionCardProps) => {
           <Box marginTop={2}>
             <Box display='flex' gap='10px' alignItems='center'>
               <Star />
-              <Typography>4.5/5</Typography>
+              <Typography>{starAverage()}</Typography>
             </Box>
             <Typography color='#838383' fontSize='18px'>
-              (101 people opinion)
+              ({flower.reviews.length} people opinion)
             </Typography>
           </Box>
           <Box
