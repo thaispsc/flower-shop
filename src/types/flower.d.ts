@@ -4,7 +4,7 @@ interface Flower {
   image: string
   price: number
   description: string
-  review: FlowerReview
+  review: FlowerReview[]
 }
 interface FlowerReview {
   authorName: string
