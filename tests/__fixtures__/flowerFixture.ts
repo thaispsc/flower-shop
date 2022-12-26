@@ -7,6 +7,15 @@ function generateDefaultFlowerParams(): Flower {
     image: faker.internet.url(),
     price: Number(faker.commerce.price()),
     description: faker.commerce.productDescription(),
+    reviews: [
+      {
+        id: faker.datatype.string(),
+        authorName: faker.name.fullName(),
+        authorPhoto: faker.datatype.string(),
+        comment: faker.commerce.productAdjective(),
+        stars: faker.datatype.number(),
+      },
+    ],
   }
 }
 
