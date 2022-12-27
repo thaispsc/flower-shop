@@ -11,7 +11,7 @@ function generateDefaultFlowerParams(): Flower {
       {
         id: faker.datatype.string(),
         authorName: faker.name.fullName(),
-        authorPhoto: faker.datatype.string(),
+        authorPhoto: faker.internet.avatar(),
         comment: faker.commerce.productAdjective(),
         stars: faker.datatype.number(),
       },
