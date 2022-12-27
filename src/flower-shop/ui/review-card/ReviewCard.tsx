@@ -18,7 +18,7 @@ export const ReviewCard = ({ flower }: FlowerCardProps) => {
         marginTop: '37px',
       }}
     >
-      <CardContent sx={{ padding: '15px 0 0 0' }}>
+      <CardContent sx={{ padding: '15px' }}>
         <Box display='flex' justifyContent='space-between'>
           <Typography variant='h5' fontWeight={500}>
             Reviews
