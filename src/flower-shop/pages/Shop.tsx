@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 import React from 'react'
 import { FlowerCard } from '../ui/flower-card/FlowerCard'
 import Header from '../ui/header/Header'
@@ -12,6 +12,9 @@ const Shop = ({ flowers }: FlowerIdPageProps) => {
     <>
       <Header />
       <Container maxWidth='lg' sx={{ marginTop: '175px' }}>
+        <Typography variant='h2' textAlign='center'>
+          Our flowers
+        </Typography>
         <Grid
           container
           display='flex'
