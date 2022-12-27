@@ -5,13 +5,72 @@
       "name": "Daisy",
       "image": "https://images.pexels.com/photos/11420027/pexels-photo-11420027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "5,00",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "2",
       "name": "Sun Flower",
       "image": "https://images.pexels.com/photos/5551654/pexels-photo-5551654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,00",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "I really liked it",
+        "stars": 4
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
+    },
+    {
+      "id": "3",
+      "name": "White Rose",
+      "image": "https://images.pexels.com/photos/8569653/pexels-photo-8569653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "price": "4,50",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "My favorite one",
+        "stars": 5
+      }
+    ]
+    },
+    {
+      "id": "4",
+      "name": "Orchild",
+      "image": "https://images.pexels.com/photos/12573405/pexels-photo-12573405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "price": "3,75",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
       "reviews": [{
         "id": "1",
@@ -30,74 +89,180 @@
     ]
     },
     {
-      "id": "3",
-      "name": "White Rose",
-      "image": "https://images.pexels.com/photos/8569653/pexels-photo-8569653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "price": "4,50",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
-    },
-    {
-      "id": "4",
-      "name": "Orchild",
-      "image": "https://images.pexels.com/photos/12573405/pexels-photo-12573405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
-    },
-    {
       "id": "5",
       "name": "Lilly",
       "image": "https://images.pexels.com/photos/7819730/pexels-photo-7819730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "6",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/11293006/pexels-photo-11293006.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "7",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/1021925/pexels-photo-1021925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "8",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/1031962/pexels-photo-1031962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "9",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/1021918/pexels-photo-1021918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "10",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/9575764/pexels-photo-9575764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "Pretty flower",
+        "stars": 3
+      }
+    ]
     },
     {
       "id": "11",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/7674809/pexels-photo-7674809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "I didn't like it",
+        "stars": 1
+      }
+    ]
     },
     {
       "id": "12",
       "name": "Tulip",
       "image": "https://images.pexels.com/photos/7141076/pexels-photo-7141076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "3,75",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque."
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis eos doloribus reiciendis eligendi numquam est neque iure consectetur quaerat vitae delectus soluta, ipsa quis officia. Repellendus incidunt quas aliquid sequi mollitia et laboriosam blanditiis, voluptatibus cumque in atque eaque.",
+      "reviews": [{
+        "id": "1",
+        "authorName": "Maria",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "This flower is the best gift I have ever got",
+        "stars": 5
+      },
+      {
+        "id": "2",
+        "authorName": "Ana",
+        "authorPhoto": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "comment": "It smells good",
+        "stars": 4
+      }
+    ]
     }
   ]
 }
