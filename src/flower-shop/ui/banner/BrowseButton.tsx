@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material'
+import { Button, Typography, Link } from '@mui/material'
 
 const BrowseButton = () => {
   return (
@@ -12,7 +12,9 @@ const BrowseButton = () => {
         },
       }}
     >
-      <Typography color='secondary'>Browse</Typography>
+      <Link href={'/shop'} underline='none'>
+        <Typography color='secondary'>Browse</Typography>
+      </Link>
     </Button>
   )
 }
