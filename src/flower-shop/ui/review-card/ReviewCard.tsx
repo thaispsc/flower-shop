@@ -1,6 +1,5 @@
-import { Box, Button, Card, CardContent, Link, Typography } from '@mui/material'
+import { Box, Card, CardContent, Typography } from '@mui/material'
 import Image from 'next/image'
-import { Cart } from '../../../lib/components/Cart'
 import { Star } from '../../../lib/components/Star'
 
 interface FlowerCardProps {
@@ -12,7 +11,6 @@ export const ReviewCard = ({ flower }: FlowerCardProps) => {
     <Card
       key={flower.id}
       sx={{
-        maxWidth: '45%',
         padding: '15px',
         borderRadius: '5px',
         marginTop: '37px',
