@@ -1,6 +1,6 @@
 import FlowerIdPage from '../../flower-shop/pages/FlowerIdPage'
 import NextError from '../../lib/components/NextError'
-import { getFlowerById } from '../../services/flowers'
+import { getAllFlowers, getFlowerById } from '../../services/flowers'
 
 interface ServerSideProps {
   params: { flowerId?: string }
@@ -22,10 +22,13 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 
   try {
     const flower = await getFlowerById(flowerId)
+    const flowersList = await getAllFlowers()
+
     return {
       props: {
         error: null,
         flower,
+        flowersList,
       },
     }
   } catch (e) {
@@ -34,6 +37,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
       props: {
         error: JSON.parse(JSON.stringify(error)),
         flower: null,
+        flowersList: null,
       },
     }
   }
@@ -42,13 +46,14 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 type PageProps = {
   error: Error | null
   flower: Flower | null
+  flowersList: Flower[] | null
 }
 
-const Page = ({ error, flower }: PageProps) => {
+const Page = ({ error, flower, flowersList }: PageProps) => {
   return (
     <>
       {error && <NextError message={error.message} />}
-      {flower && <FlowerIdPage flower={flower} />}
+      {flower && <FlowerIdPage flower={flower} flowers={flowersList} />}
     </>
   )
 }
