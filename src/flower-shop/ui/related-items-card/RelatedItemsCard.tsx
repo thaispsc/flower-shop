@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from '@mui/material'
+import { Box, Card, CardContent, Link, Typography } from '@mui/material'
 import Image from 'next/image'
 
 interface RelatedItemsCardProps {
@@ -32,12 +32,14 @@ export const RelatedItemsCard = ({ flowers }: RelatedItemsCardProps) => {
         >
           {relatedFlowers.map(flower => (
             <Box key={flower.id} marginTop={3}>
-              <Image
-                src={flower.image}
-                alt='related flower'
-                width={220}
-                height={220}
-              />
+              <Link href={`/flowers/${flower.id}`} underline='none'>
+                <Image
+                  src={flower.image}
+                  alt='related flower'
+                  width={220}
+                  height={220}
+                />
+              </Link>
             </Box>
           ))}
         </Box>
