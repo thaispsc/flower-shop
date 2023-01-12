@@ -1,3 +1,4 @@
+import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { getServerSideProps } from '../../src/pages/flowers/[flowerId]'
 import FlowerIdPage from '../../src/pages/flowers/[flowerId]'
@@ -15,15 +16,18 @@ const renderFlowerIdPage = async (flower: Flower) => {
   })
   return render(
     <>
-      <FlowerIdPage flower={props.flower} error={props.error} />
+      <FlowerIdPage
+        flower={props.flower}
+        error={props.error}
+        flowersList={props.flowersList}
+      />
     </>,
   )
 }
 
-const flower = new FlowerFixture().build()
-
 describe('getServerSideProps', () => {
   it('should return a proper object', async () => {
+    const flower = new FlowerFixture().build()
     const { props } = await getServerSideProps({
       params: { flowerId: flower.id },
     })
@@ -33,6 +37,8 @@ describe('getServerSideProps', () => {
 })
 
 describe('[flowerId]', () => {
+  const flower = new FlowerFixture().build()
+
   it('should render the whole flower page', async () => {
     const getFlowerOKResponse = buildFlowerFoundResponse(flower)
     const { request: mockedGetFlowerEndpoint } = mockGetFlowerByIdEndpoint(
@@ -49,13 +55,14 @@ describe('[flowerId]', () => {
   })
 
   it('should render null if flowers list is not found', async () => {
+    const notFoundflower = new FlowerFixture().build()
     const getFlowerNOTOKResponse = buildFlowerNotFoundResponse()
     const { request: notFoundmockedGetAllFlowersEndpoint } =
       mockGetFlowerByIdEndpoint(flower.id, getFlowerNOTOKResponse)
 
     mockServer.use(...[notFoundmockedGetAllFlowersEndpoint])
 
-    await renderFlowerIdPage(flower)
+    await renderFlowerIdPage(notFoundflower)
 
     const errorElem = screen.getByText('Something bad happened.')
     expect(errorElem).toBeVisible()

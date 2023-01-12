@@ -1,5 +1,4 @@
 import React from 'react'
-import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import Shop from '../../src/pages/shop'
 import { getServerSideProps } from '../../src/pages/flower-shop'
