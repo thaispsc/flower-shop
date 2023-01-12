@@ -35,7 +35,7 @@ export const RelatedItemsCard = ({ flowers }: RelatedItemsCardProps) => {
               <Link href={`/flowers/${flower.id}`} underline='none'>
                 <Image
                   src={flower.image}
-                  alt='related flower'
+                  alt={flower.name}
                   width={220}
                   height={220}
                 />
