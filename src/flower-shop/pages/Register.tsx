@@ -3,7 +3,7 @@ import RegisterComponent from '../ui/register/RegisterComponent'
 
 const Register = () => {
   return (
-    <Container>
+    <Container sx={{ height: '98vh', display: 'flex', alignItems: 'center' }}>
       <RegisterComponent />
     </Container>
   )
