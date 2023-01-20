@@ -1,8 +1,11 @@
+import { Container } from '@mui/material'
+import RegisterComponent from '../ui/register/RegisterComponent'
+
 const Register = () => {
   return (
-    <>
-      <h1>teste</h1>
-    </>
+    <Container>
+      <RegisterComponent />
+    </Container>
   )
 }
 
