@@ -116,7 +116,7 @@ const RegisterComponent = () => {
             marginBottom={10}
           >
             Already have an account?{' '}
-            <Link href='/flower-shop' underline='none'>
+            <Link href='/login' underline='none'>
               Login
             </Link>
           </Typography>
