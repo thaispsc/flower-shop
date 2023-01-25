@@ -14,7 +14,7 @@ import { Home } from './Home'
 const RegisterComponent = () => {
   return (
     <Grid container display='flex'>
-      <Grid item md={6}>
+      <Grid item md={12} display='flex'>
         <Card variant='outlined' sx={{ paddingX: '48px', paddingY: '30px' }}>
           <Box
             display='flex'
@@ -120,8 +120,6 @@ const RegisterComponent = () => {
             </Link>
           </Typography>
         </Card>
-      </Grid>
-      <Grid item md={6}>
         <Image src={RegisterFlower} alt='Flower' width={576} />
       </Grid>
     </Grid>
