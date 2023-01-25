@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
-import { Home } from './Home'
+import { HomeIcon } from './HomeIcon'
 
 const RegisterComponent = () => {
   return (
@@ -25,7 +25,7 @@ const RegisterComponent = () => {
             <Typography variant='h2'>Register</Typography>
             <Link href='/flower-shop' underline='none'>
               <Box display='flex' gap={1} alignItems='center'>
-                <Home />
+                <HomeIcon />
                 <Typography fontSize='18px'>Back to home</Typography>
               </Box>
             </Link>

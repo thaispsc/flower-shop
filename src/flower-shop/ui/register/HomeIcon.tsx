@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export const Home = () => (
+export const HomeIcon = () => (
   <svg
     width='17'
     height='17'

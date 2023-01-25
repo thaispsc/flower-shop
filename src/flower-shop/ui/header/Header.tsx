@@ -13,8 +13,8 @@ import {
 import Logo from '../logo/Logo'
 import MenuIcon from '@mui/icons-material/Menu'
 import IconButton from '@mui/material/IconButton'
-import { Cart } from './Cart'
-import { User } from './User'
+import { UserIcon } from './UserIcon'
+import { CartIcon } from './CartIcon'
 
 const PagesLinks = [
   { name: 'Home', link: '/flower-shop' },
@@ -133,10 +133,10 @@ const Header = () => {
           </Box>
           <Box>
             <IconButton>
-              <User />
+              <UserIcon />
             </IconButton>
             <IconButton>
-              <Cart />
+              <CartIcon />
             </IconButton>
           </Box>
         </Toolbar>

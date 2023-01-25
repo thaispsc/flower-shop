@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Typography } from '@mui/material'
 import Image from 'next/image'
-import { Star } from '../../../lib/components/Star'
+import { StarIcon } from '../../../lib/components/StarIcon'
 
 interface FlowerCardProps {
   flower: Flower
@@ -50,7 +50,7 @@ export const ReviewCard = ({ flower }: FlowerCardProps) => {
                   {review.comment}
                 </Typography>
                 {Array.from({ length: review.stars }).map((_, index) => (
-                  <Star key={index} />
+                  <StarIcon key={index} />
                 ))}
               </Box>
             </Box>

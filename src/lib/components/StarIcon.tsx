@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export const Star = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
+export const StarIcon = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
     width='20'
     height='18'

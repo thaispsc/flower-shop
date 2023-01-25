@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export const Cart = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
+export const CartIcon = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
     width={32}
     height={29}
