@@ -69,6 +69,7 @@ const RegisterComponent = () => {
             id='outlined-basic'
             label='Password'
             variant='outlined'
+            type='password'
             sx={{
               width: '100%',
               '& .MuiFormLabel-root': {
