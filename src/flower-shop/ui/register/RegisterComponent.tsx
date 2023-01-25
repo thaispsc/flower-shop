@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
-import { HomeIcon } from './HomeIcon'
+import { HomeIcon } from '../../../lib/components/HomeIcon'
 
 const RegisterComponent = () => {
   return (
