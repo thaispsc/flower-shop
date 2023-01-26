@@ -1,6 +1,6 @@
 import React from 'react'
-import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import FlowerShop from '../../src/pages/flower-shop'
 import { getServerSideProps } from '../../src/pages/flower-shop'
 import {
@@ -20,6 +20,21 @@ const renderFlowerShopPage = async () => {
   )
 }
 
+function mockLocationHref() {
+  delete window.location
+  window.location = {}
+  const getHrefSpy = jest.fn()
+  const setHrefSpy = jest.fn()
+  Object.defineProperty(window.location, 'href', {
+    get: getHrefSpy,
+    set: setHrefSpy,
+  })
+
+  return {
+    getHrefSpy,
+    setHrefSpy,
+  }
+}
 describe('getServerSideProps', () => {
   it('should return an array of objects', async () => {
     const { props } = await getServerSideProps()
@@ -55,4 +70,21 @@ describe('flower-shop', () => {
     const errorElem = screen.getByText('Something bad happened.')
     expect(errorElem).toBeVisible()
   })
+
+  // it('should redirect to shop page when the browse button is clicked', async () => {
+  //   const getFlowersListOKResponse = buildFlowersListFoundResponse(flowersList)
+  //   const { request: mockedGetAllFlowersEndpoint } = mockGetAllFlowersEndpoint(
+  //     getFlowersListOKResponse,
+  //   )
+  //   mockServer.use(...[mockedGetAllFlowersEndpoint])
+
+  //   await renderFlowerShopPage()
+
+  //   const { setHrefSpy } = mockLocationHref()
+
+  //   const button = screen.getAlByText('Browse')
+
+  //   userEvent.click(button)
+  //   expect(setHrefSpy).toHaveBeenCalled()
+  // })
 })
