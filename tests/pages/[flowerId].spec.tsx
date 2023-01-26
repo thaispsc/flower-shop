@@ -9,6 +9,11 @@ import {
   mockGetFlowerByIdEndpoint,
 } from '../__stubs__/http/endpoints/mockGetFlowerByIdEndpoint'
 import { mockServer } from '../__stubs__/http/mockServer'
+import {
+  buildFlowersListFoundResponse,
+  mockGetAllFlowersEndpoint,
+} from '../__stubs__/http/endpoints/mockGetAllFlowersEndpoint'
+import FlowersListFixture from '../__fixtures__/flowersListFixture'
 
 const renderFlowerIdPage = async (flower: Flower) => {
   const { props } = await getServerSideProps({
@@ -37,15 +42,20 @@ describe('getServerSideProps', () => {
 })
 
 describe('[flowerId]', () => {
-  const flower = new FlowerFixture().build()
-
   it('should render the whole flower page', async () => {
+    const flower: Flower = new FlowerFixture().build()
+    const flowersList: Flower[] = new FlowersListFixture().build()
     const getFlowerOKResponse = buildFlowerFoundResponse(flower)
+    const getFlowersListOKResponse = buildFlowersListFoundResponse(flowersList)
     const { request: mockedGetFlowerEndpoint } = mockGetFlowerByIdEndpoint(
       flower.id,
       getFlowerOKResponse,
     )
-    mockServer.use(...[mockedGetFlowerEndpoint])
+    const { request: mockedGetAllFlowersEndpoint } = mockGetAllFlowersEndpoint(
+      getFlowersListOKResponse,
+    )
+
+    mockServer.use(...[mockedGetFlowerEndpoint, mockedGetAllFlowersEndpoint])
 
     await renderFlowerIdPage(flower)
 
@@ -54,15 +64,22 @@ describe('[flowerId]', () => {
     expect(flowerNameText).toBeVisible()
   })
 
-  it('should render null if flowers list is not found', async () => {
-    const notFoundflower = new FlowerFixture().build()
+  it('should render null if flower is not found', async () => {
+    const notFoundFlower = new FlowerFixture().build()
+    const flowersList: Flower[] = new FlowersListFixture().build()
     const getFlowerNOTOKResponse = buildFlowerNotFoundResponse()
-    const { request: notFoundmockedGetAllFlowersEndpoint } =
-      mockGetFlowerByIdEndpoint(flower.id, getFlowerNOTOKResponse)
+    const getFlowersListOKResponse = buildFlowersListFoundResponse(flowersList)
+    const { request: notFoundmockedGetFlowerEndpoint } =
+      mockGetFlowerByIdEndpoint(notFoundFlower.id, getFlowerNOTOKResponse)
+    const { request: mockedGetAllFlowersEndpoint } = mockGetAllFlowersEndpoint(
+      getFlowersListOKResponse,
+    )
 
-    mockServer.use(...[notFoundmockedGetAllFlowersEndpoint])
+    mockServer.use(
+      ...[notFoundmockedGetFlowerEndpoint, mockedGetAllFlowersEndpoint],
+    )
 
-    await renderFlowerIdPage(notFoundflower)
+    await renderFlowerIdPage(notFoundFlower)
 
     const errorElem = screen.getByText('Something bad happened.')
     expect(errorElem).toBeVisible()
