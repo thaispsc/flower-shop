@@ -31,7 +31,7 @@ const RegisterComponent = () => {
             </Link>
           </Box>
           <Typography fontSize='18px' color='#838383' marginTop={2}>
-            Register and help us help you
+            Register and help us help test
           </Typography>
           <TextField
             id='outlined-basic'
