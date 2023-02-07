@@ -10,7 +10,7 @@ export const RelatedItemsCard = ({ flowers }: RelatedItemsCardProps) => {
     return array.sort(() => Math.random() - 0.5)
   }
 
-  const relatedFlowers = shuffle(flowers).slice(0, 4)
+  const relatedFlowers = () => shuffle(flowers).slice(0, 4)
 
   return (
     <Card
@@ -30,7 +30,7 @@ export const RelatedItemsCard = ({ flowers }: RelatedItemsCardProps) => {
           width='100%'
           justifyContent='space-around'
         >
-          {relatedFlowers.map(flower => (
+          {relatedFlowers().map(flower => (
             <Box key={flower.id} marginTop={3}>
               <Link href={`/flowers/${flower.id}`} underline='none'>
                 <Image
