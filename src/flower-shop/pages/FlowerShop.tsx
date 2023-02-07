@@ -19,9 +19,9 @@ const FlowerShop = ({ flowers }: FlowerShopProps) => {
         <BestSellers />
         <Box display='flex' marginTop={4} justifyContent='space-between'>
           {bestSellersFlowers.map(flower => (
-            <>
+            <div key={flower.id}>
               <FlowerCard flower={flower} />
-            </>
+            </div>
           ))}
         </Box>
       </Container>
