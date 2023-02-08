@@ -10,7 +10,7 @@ export const mockGetFlowerByIdEndpoint = (
 ) => ({
   ...data,
   request: rest.get(
-    `http://localhost:3333/flowers/:flowerId`,
+    `http://localhost:3333/flowers/${flowerId}`,
     (_req, res, ctx) => {
       return res(ctx.status(status), ctx.json(data))
     },
