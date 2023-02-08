@@ -1,15 +1,13 @@
-interface BasicResponse<T> {
+interface GetDataResponse {
   status: number
+}
+
+export interface DataFound<T> extends GetDataResponse {
   data: T
 }
 
-interface BasicResponseWithError {
-  status: number
+export interface DataNotFound extends GetDataResponse {
   data: {
     error: string
   }
 }
-
-export type DataFound<T> = BasicResponse<T>
-
-export type DataNotFound = BasicResponseWithError
