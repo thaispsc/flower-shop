@@ -133,7 +133,9 @@ const Header = () => {
           </Box>
           <Box>
             <IconButton>
-              <UserIcon />
+              <Link href='/login' underline='none'>
+                <UserIcon />
+              </Link>
             </IconButton>
             <IconButton>
               <CartIcon />
