@@ -23,7 +23,7 @@ const LoginComponent = () => {
             justifyContent='space-between'
             marginTop={10}
           >
-            <Typography variant='h2'>Register</Typography>
+            <Typography variant='h2'>Login</Typography>
             <Link href='/flower-shop' underline='none'>
               <Box display='flex' gap={1} alignItems='center'>
                 <HomeIcon />
