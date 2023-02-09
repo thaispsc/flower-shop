@@ -266,6 +266,12 @@
       "username": "teste",
       "password": "12345",
       "id": "urV3Syw"
+    },
+    {
+      "email": "maria@email.com",
+      "username": "maria123",
+      "password": "123456",
+      "id": "ZRokWBk"
     }
   ]
 }
