@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import {
   Box,
   Button,
@@ -12,6 +13,14 @@ import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
 
 const RegisterComponent = () => {
+  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value)
+  }
+
   return (
     <Grid container display='flex'>
       <Grid item md={12} display='flex'>
