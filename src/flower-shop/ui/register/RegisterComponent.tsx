@@ -11,6 +11,7 @@ import {
 import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
+import { CreateUser } from '../../../services/users'
 
 const RegisterComponent = () => {
   const [email, setEmail] = useState('')
@@ -27,6 +28,12 @@ const RegisterComponent = () => {
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value)
+  }
+
+  const registerUser = async () => {
+    const userValues = { email, username, password }
+    const user = await CreateUser(userValues)
+    return user
   }
 
   return (
