@@ -29,6 +29,8 @@ const RegisterComponent = () => {
     setPassword(event.target.value)
   }
 
+  console.log(email, username, password)
+
   return (
     <Grid container display='flex'>
       <Grid item md={12} display='flex'>
@@ -65,6 +67,7 @@ const RegisterComponent = () => {
               },
               marginTop: '50px',
             }}
+            onChange={handleEmailChange}
           />
           <TextField
             id='outlined-basic'
@@ -81,6 +84,7 @@ const RegisterComponent = () => {
               },
               marginY: '20px',
             }}
+            onChange={handleUsernameChange}
           />
           <TextField
             id='outlined-basic'
@@ -97,6 +101,7 @@ const RegisterComponent = () => {
                 fontSize: '18px',
               },
             }}
+            onChange={handlePasswordChange}
           />
           <Typography
             fontSize='16px'
