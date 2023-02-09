@@ -32,7 +32,6 @@ const RegisterComponent = () => {
 
   const registerUser = async () => {
     const userValues = { email, username, password }
-    console.log(userValues)
     const user = await CreateUser(userValues)
     return user
   }
