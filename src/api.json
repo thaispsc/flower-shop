@@ -254,5 +254,12 @@
         }
       ]
     }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "userName": "thaispsc",
+      "password": "123456"
+    }
   ]
 }
