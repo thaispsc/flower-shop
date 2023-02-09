@@ -32,6 +32,7 @@ const RegisterComponent = () => {
 
   const registerUser = async () => {
     const userValues = { email, username, password }
+    console.log(userValues)
     const user = await CreateUser(userValues)
     return user
   }
@@ -129,6 +130,9 @@ const RegisterComponent = () => {
               '&:hover': {
                 backgroundColor: '#000000',
               },
+            }}
+            onClick={async () => {
+              await registerUser()
             }}
           >
             <Link underline='none'>
