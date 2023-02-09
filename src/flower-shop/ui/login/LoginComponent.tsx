@@ -90,7 +90,7 @@ const LoginComponent = () => {
               },
             }}
           >
-            <Link href={'/shop'} underline='none'>
+            <Link underline='none'>
               <Typography color='secondary'>Login</Typography>
             </Link>
           </Button>
