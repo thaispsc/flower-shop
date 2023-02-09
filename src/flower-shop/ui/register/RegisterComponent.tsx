@@ -21,6 +21,10 @@ const RegisterComponent = () => {
     setEmail(event.target.value)
   }
 
+  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value)
+  }
+
   return (
     <Grid container display='flex'>
       <Grid item md={12} display='flex'>
