@@ -131,7 +131,7 @@ const RegisterComponent = () => {
               },
             }}
           >
-            <Link href={'/shop'} underline='none'>
+            <Link underline='none'>
               <Typography color='secondary'>Register</Typography>
             </Link>
           </Button>
