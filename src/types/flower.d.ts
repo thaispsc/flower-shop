@@ -13,3 +13,9 @@ interface FlowerReview {
   comment: string
   stars: number
 }
+
+interface User {
+  id: string
+  username: string
+  password: string
+}
