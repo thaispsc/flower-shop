@@ -272,6 +272,24 @@
       "username": "maria123",
       "password": "123456",
       "id": "ZRokWBk"
+    },
+    {
+      "email": "joao@email.com",
+      "username": "joao123",
+      "password": "123456",
+      "id": "WiiaNZa"
+    },
+    {
+      "email": "ana@email.com",
+      "username": "ana123",
+      "password": "123456",
+      "id": "do6gMA6"
+    },
+    {
+      "email": "matheus@email.com",
+      "username": "matheus123",
+      "password": "123456",
+      "id": "hdS9Fnb"
     }
   ]
 }
