@@ -29,8 +29,6 @@ const RegisterComponent = () => {
     setPassword(event.target.value)
   }
 
-  console.log(email, username, password)
-
   return (
     <Grid container display='flex'>
       <Grid item md={12} display='flex'>
