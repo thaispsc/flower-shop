@@ -25,6 +25,10 @@ const RegisterComponent = () => {
     setUsername(event.target.value)
   }
 
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value)
+  }
+
   return (
     <Grid container display='flex'>
       <Grid item md={12} display='flex'>
