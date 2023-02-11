@@ -296,6 +296,12 @@
       "username": "teste",
       "password": "123456",
       "id": "iBWZ50M"
+    },
+    {
+      "email": "jose@email.com",
+      "username": "jose",
+      "password": "123456",
+      "id": "3X7AoIH"
     }
   ]
 }
