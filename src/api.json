@@ -290,6 +290,12 @@
       "username": "matheus123",
       "password": "123456",
       "id": "hdS9Fnb"
+    },
+    {
+      "email": "teste@email.com",
+      "username": "teste",
+      "password": "123456",
+      "id": "iBWZ50M"
     }
   ]
 }
