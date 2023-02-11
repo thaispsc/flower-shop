@@ -9,5 +9,3 @@ export const createUser = async (user: Omit<User, 'id'>) => {
     throw err
   }
 }
-
-export const
