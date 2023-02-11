@@ -1,6 +1,6 @@
 import { api } from './config'
 
-export const CreateUser = async (user: Omit<User, 'id'>) => {
+export const createUser = async (user: Omit<User, 'id'>) => {
   try {
     const response = await api.post('/users', user)
     return response.data
@@ -9,3 +9,5 @@ export const CreateUser = async (user: Omit<User, 'id'>) => {
     throw err
   }
 }
+
+export const

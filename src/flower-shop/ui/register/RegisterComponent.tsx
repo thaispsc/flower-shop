@@ -11,7 +11,7 @@ import {
 import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
-import { CreateUser } from '../../../services/users'
+import { createUser } from '../../../services/users'
 
 const RegisterComponent = () => {
   const [email, setEmail] = useState('')
@@ -32,7 +32,7 @@ const RegisterComponent = () => {
 
   const registerUser = async () => {
     const userValues = { email, username, password }
-    await CreateUser(userValues)
+    await createUser(userValues)
     window.location.href = `/flower-shop`
   }
 
