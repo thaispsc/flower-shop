@@ -14,8 +14,4 @@ interface FlowerReview {
   stars: number
 }
 
-interface User {
-  id: string
-  username: string
-  password: string
-}
+
