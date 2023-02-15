@@ -1,21 +1,27 @@
 import React from 'react'
 import { createUser } from '../../src/services/users'
+import UserFixture from '../__fixtures__/userFixture'
+import {
+  buildUserFoundResponse,
+  mockCreateUserEndpoint,
+} from '../__stubs__/http/endpoints/mockCreateUserEndpoint'
+import { mockServer } from '../__stubs__/http/mockServer'
 
 describe('createUser', () => {
   it('should create an user', async () => {
-    const email = 'jose@email.com'
-    const username = 'jose'
-    const password = '123456'
+    const userVariant = new UserFixture().build()
 
-    const userValues = { email, username, password }
+    const createUserOkResponse = buildUserFoundResponse(userVariant)
+    const { request: mockedCreateUserEndpoint } =
+      mockCreateUserEndpoint(createUserOkResponse)
 
-    const registeredUser = await createUser(userValues)
+    mockServer.use(...[mockedCreateUserEndpoint])
 
-    expect(registeredUser).toStrictEqual({
-      id: 'random-id',
-      email,
-      username,
-      password,
-    })
+    const username = userVariant.username
+    const password = userVariant.password
+
+    const registeredUser = await createUser({ username, password })
+
+    expect(registeredUser).toHaveProperty('id', userVariant.id)
   })
 })
