@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <GlobalStyles
         styles={{
-          body: { backgroundColor: '#F2F2F2' },
+          body: { backgroundColor: '#F2F2F2', margin: 0 },
         }}
       />
       <Component {...pageProps} />
