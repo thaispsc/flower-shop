@@ -3,7 +3,13 @@ import LoginComponent from '../ui/login/LoginComponent'
 
 const Login = () => {
   return (
-    <Container sx={{ height: '98vh', display: 'flex', alignItems: 'center' }}>
+    <Container
+      sx={{
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
       <LoginComponent />
     </Container>
   )
