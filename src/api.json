@@ -302,6 +302,12 @@
       "username": "jose",
       "password": "123456",
       "id": "3X7AoIH"
+    },
+    {
+      "email": "thais@email.com",
+      "username": "thais",
+      "password": "123456",
+      "id": "vU_zDiv"
     }
   ]
 }
