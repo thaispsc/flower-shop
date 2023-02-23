@@ -1,7 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Shop from '../../src/pages/shop'
-import { getServerSideProps } from '../../src/pages/flower-shop'
+import Shop, { getServerSideProps } from '../../src/pages/shop'
 import {
   buildFlowersListFoundResponse,
   buildFlowersListNotFoundResponse,
