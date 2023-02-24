@@ -14,7 +14,7 @@ import { HomeIcon } from '../../../lib/components/HomeIcon'
 
 const LoginComponent = () => {
   return (
-    <Grid md={12} display='flex'>
+    <Grid item md={12} display='flex'>
       <Card variant='outlined' sx={{ paddingX: '48px', paddingY: '30px' }}>
         <Box display='flex' alignItems='center' justifyContent='space-between'>
           <Typography variant='h2'>Login</Typography>
