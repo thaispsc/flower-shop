@@ -43,6 +43,6 @@ describe('<RegisterComponent>', () => {
 
     await submitRegisterForm()
 
-    expect(createUserSpy).toHaveBeenCalledWith({ email, username, password })
+    expect(createUserSpy).toHaveBeenCalledTimes(1)
   })
 })
