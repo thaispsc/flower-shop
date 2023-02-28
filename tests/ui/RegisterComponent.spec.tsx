@@ -1,26 +1,27 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import RegisterComponent from '../../src/flower-shop/ui/register/RegisterComponent'
 import { createUser } from '../../src/services/users'
 
-describe('<RegisterComponent>', () => {
-  const users = { createUser }
-  const createUserSpy = jest.spyOn(users, 'createUser')
+jest.mock('../../src/services/users', () => ({
+  createUser: jest.fn(),
+}))
 
+describe('<RegisterComponent>', () => {
   const typeEmail = async (email: string) => {
-    const input = screen.getByLabelText('Email')
-    await userEvent.type(input, email)
+    const emailInput = screen.getByPlaceholderText('Email')
+    await userEvent.type(emailInput, email)
   }
 
   const typeUsername = async (username: string) => {
-    const input = screen.getByLabelText('Username')
-    await userEvent.type(input, username)
+    const usernameInput = screen.getByPlaceholderText('Username')
+    await userEvent.type(usernameInput, username)
   }
 
   const typePassword = async (password: string) => {
-    const input = screen.getByLabelText('Password')
-    await userEvent.type(input, password)
+    const passwordInput = screen.getByPlaceholderText('Password')
+    await userEvent.type(passwordInput, password)
   }
 
   const submitRegisterForm = async () => {
@@ -29,8 +30,6 @@ describe('<RegisterComponent>', () => {
   }
 
   it('should create an user when the register button is clicked', async () => {
-    createUserSpy.mockResolvedValue({})
-
     render(<RegisterComponent />)
 
     const email = 'thaispcavalcante@gmail.com'
@@ -43,6 +42,6 @@ describe('<RegisterComponent>', () => {
 
     await submitRegisterForm()
 
-    expect(createUserSpy).toHaveBeenCalledTimes(1)
+    expect(createUser).toHaveBeenCalledWith({ email, username, password })
   })
 })
