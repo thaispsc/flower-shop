@@ -55,6 +55,7 @@ const RegisterComponent = () => {
           id='outlined-basic'
           label='Email'
           variant='outlined'
+          placeholder='Email'
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
@@ -72,6 +73,7 @@ const RegisterComponent = () => {
           id='outlined-basic'
           label='Username'
           variant='outlined'
+          placeholder='Username'
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
@@ -90,6 +92,7 @@ const RegisterComponent = () => {
           label='Password'
           variant='outlined'
           type='password'
+          placeholder='Password'
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
