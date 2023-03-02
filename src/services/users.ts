@@ -9,3 +9,13 @@ export const createUser = async (user: Omit<User, 'id'>) => {
     throw err
   }
 }
+
+export const loginUser = async (user: Partial<User>) => {
+  try {
+    const response = await api.post('/login', user)
+    return response.data
+  } catch (error) {
+    const err = new Error('Failed to log user')
+    throw err
+  }
+}
