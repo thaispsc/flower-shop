@@ -104,6 +104,9 @@ const LoginComponent = () => {
               backgroundColor: '#000000',
             },
           }}
+          onClick={async () => {
+            await SignInUser()
+          }}
         >
           <Link underline='none'>
             <Typography color='secondary'>Login</Typography>
