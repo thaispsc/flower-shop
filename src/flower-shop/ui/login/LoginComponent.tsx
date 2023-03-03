@@ -9,10 +9,29 @@ import {
   Typography,
 } from '@mui/material'
 import Image from 'next/image'
+import { useState } from 'react'
 import LoginFlower from 'src/assets/images/LoginFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
+import { loginUser } from '../../../services/users'
 
 const LoginComponent = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value)
+  }
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value)
+  }
+
+  const SignInUser = async () => {
+    const loginValues = { username, password }
+    await loginUser(loginValues)
+    window.location.href = `/flower-shop`
+  }
+
   return (
     <Grid item md={12} display='flex'>
       <Card variant='outlined' sx={{ paddingX: '48px', paddingY: '30px' }}>
@@ -44,6 +63,7 @@ const LoginComponent = () => {
             marginTop: '50px',
             marginBottom: '20px',
           }}
+          onChange={handleUsernameChange}
         />
         <TextField
           id='outlined-basic'
@@ -60,6 +80,7 @@ const LoginComponent = () => {
               fontSize: '18px',
             },
           }}
+          onChange={handlePasswordChange}
         />
         <Box
           display='flex'
