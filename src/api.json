@@ -255,7 +255,7 @@
       ]
     }
   ],
-  "Users": [
+  "users": [
     {
       "id": "1",
       "userName": "thaispsc",
@@ -308,6 +308,13 @@
       "username": "thais",
       "password": "123456",
       "id": "vU_zDiv"
+    }
+  ],
+  "login": [
+    {
+      "id": "1",
+      "userName": "thaispsc",
+      "password": "123456"
     }
   ]
 }
