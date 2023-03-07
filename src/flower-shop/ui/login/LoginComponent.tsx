@@ -27,8 +27,7 @@ const LoginComponent = () => {
   }
 
   const SignInUser = async () => {
-    const loginValues = { username, password }
-    await loginUser(loginValues)
+    await loginUser({ username, password })
     window.location.href = `/flower-shop`
   }
 
