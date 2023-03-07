@@ -31,9 +31,11 @@ const RegisterComponent = () => {
   }
 
   const registerUser = async () => {
-    const userValues = { email, username, password }
-    await createUser(userValues)
-    window.location.href = `/flower-shop`
+    if (email !== '' && username !== '' && password !== '') {
+      const userValues = { email, username, password }
+      await createUser(userValues)
+      window.location.href = `/flower-shop`
+    }
   }
 
   return (
