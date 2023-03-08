@@ -12,6 +12,7 @@ import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
 import { createUser } from '../../../services/users'
+import { useForm } from 'react-hook-form'
 
 const RegisterComponent = () => {
   const [email, setEmail] = useState('')
@@ -37,6 +38,12 @@ const RegisterComponent = () => {
       window.location.href = `/flower-shop`
     }
   }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>()
 
   return (
     <Grid item md={12} display='flex'>
@@ -129,9 +136,7 @@ const RegisterComponent = () => {
               backgroundColor: '#000000',
             },
           }}
-          onClick={async () => {
-            await registerUser()
-          }}
+          onClick={handleSubmit(registerUser)}
         >
           <Link underline='none'>
             <Typography color='secondary'>Register</Typography>
