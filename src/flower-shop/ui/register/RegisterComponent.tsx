@@ -13,8 +13,21 @@ import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
 import { createUser } from '../../../services/users'
 import { useForm } from 'react-hook-form'
+import * as yup from 'yup'
+
+interface RegisterForm {
+  email: string
+  username: string
+  password: string
+}
 
 const RegisterComponent = () => {
+  const registerValidationSchema = yup.object().shape({
+    email: yup.string().email('Email inválido').required('*'),
+    username: yup.string().required('*'),
+    password: yup.string().required('*'),
+  })
+
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -32,18 +45,19 @@ const RegisterComponent = () => {
   }
 
   const registerUser = async () => {
-    if (email !== '' && username !== '' && password !== '') {
-      const userValues = { email, username, password }
-      await createUser(userValues)
-      window.location.href = `/flower-shop`
-    }
+    const userValues = { email, username, password }
+    registerValidationSchema
+      .validate(userValues)
+      .then(async () => {
+        if (email !== '' && username !== '' && password !== '') {
+          await createUser(userValues)
+          window.location.href = `/flower-shop`
+        }
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>()
 
   return (
     <Grid item md={12} display='flex'>
@@ -136,7 +150,9 @@ const RegisterComponent = () => {
               backgroundColor: '#000000',
             },
           }}
-          onClick={handleSubmit(registerUser)}
+          onClick={async () => {
+            await registerUser()
+          }}
         >
           <Link underline='none'>
             <Typography color='secondary'>Register</Typography>
