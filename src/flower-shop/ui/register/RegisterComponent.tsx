@@ -12,7 +12,6 @@ import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
 import { createUser } from '../../../services/users'
-import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 interface RegisterForm {
