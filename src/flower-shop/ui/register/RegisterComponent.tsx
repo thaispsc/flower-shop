@@ -14,12 +14,6 @@ import { HomeIcon } from '../../../lib/components/HomeIcon'
 import { createUser } from '../../../services/users'
 import * as yup from 'yup'
 
-interface RegisterForm {
-  email: string
-  username: string
-  password: string
-}
-
 const RegisterComponent = () => {
   const registerValidationSchema = yup.object().shape({
     email: yup
