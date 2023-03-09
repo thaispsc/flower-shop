@@ -13,8 +13,20 @@ import { useState } from 'react'
 import LoginFlower from 'src/assets/images/LoginFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
 import { loginUser } from '../../../services/users'
+import * as yup from 'yup'
 
 const LoginComponent = () => {
+  const loginValidationSchema = yup.object().shape({
+    username: yup
+      .string()
+      .required()
+      .min(3, 'Username must be at least 3 characters'),
+    password: yup
+      .string()
+      .required()
+      .min(6, 'Password must be at least 6 characters'),
+  })
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -26,11 +38,24 @@ const LoginComponent = () => {
     setPassword(event.target.value)
   }
 
+  const [errors, setErrors] = useState({})
+
   const SignInUser = async () => {
-    if (username !== '' && password !== '') {
-      await loginUser({ username, password })
-      window.location.href = `/flower-shop`
-    }
+    const userValues = { username, password }
+    loginValidationSchema
+      .validate(userValues, { abortEarly: false })
+      .then(async () => {
+        await loginUser(userValues)
+        window.location.href = `/flower-shop`
+      })
+      .catch((errors: yup.ValidationError) => {
+        const validationErrors: { [key: string]: string } = {}
+        errors.inner.forEach(error => {
+          if (!error.path) return
+          validationErrors[error.path] = error.message
+        })
+        setErrors(validationErrors)
+      })
   }
 
   return (
@@ -52,6 +77,8 @@ const LoginComponent = () => {
           id='outlined-basic'
           label='Username'
           variant='outlined'
+          error={Boolean(errors.username)}
+          helperText={errors.username}
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
@@ -71,6 +98,8 @@ const LoginComponent = () => {
           label='Password'
           variant='outlined'
           type='password'
+          error={Boolean(errors.password)}
+          helperText={errors.password}
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
