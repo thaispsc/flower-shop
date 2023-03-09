@@ -22,9 +22,18 @@ interface RegisterForm {
 
 const RegisterComponent = () => {
   const registerValidationSchema = yup.object().shape({
-    email: yup.string().email('Email inválido').required('*'),
-    username: yup.string().required('*'),
-    password: yup.string().required('*'),
+    email: yup
+      .string()
+      .email('Email address is invalid')
+      .required('Email is a required field'),
+    username: yup
+      .string()
+      .required()
+      .min(3, 'Username must be at least 3 characters'),
+    password: yup
+      .string()
+      .required()
+      .min(6, 'Password must be at least 6 characters'),
   })
 
   const [email, setEmail] = useState('')
@@ -43,18 +52,25 @@ const RegisterComponent = () => {
     setPassword(event.target.value)
   }
 
+  const [errors, setErrors] = useState({})
+
   const registerUser = async () => {
     const userValues = { email, username, password }
     registerValidationSchema
-      .validate(userValues)
+      .validate(userValues, { abortEarly: false })
       .then(async () => {
         if (email !== '' && username !== '' && password !== '') {
           await createUser(userValues)
           window.location.href = `/flower-shop`
         }
       })
-      .catch(error => {
-        console.error(error)
+      .catch((errors: yup.ValidationError) => {
+        const validationErrors: { [key: string]: string } = {}
+        errors.inner.forEach(error => {
+          if (!error.path) return
+          validationErrors[error.path] = error.message
+        })
+        setErrors(validationErrors)
       })
   }
 
@@ -78,6 +94,8 @@ const RegisterComponent = () => {
           label='Email'
           variant='outlined'
           placeholder='Email'
+          error={Boolean(errors.email)}
+          helperText={errors.email}
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
@@ -96,6 +114,8 @@ const RegisterComponent = () => {
           label='Username'
           variant='outlined'
           placeholder='Username'
+          error={Boolean(errors.username)}
+          helperText={errors.username}
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
@@ -115,6 +135,8 @@ const RegisterComponent = () => {
           variant='outlined'
           type='password'
           placeholder='Password'
+          error={Boolean(errors.password)}
+          helperText={errors.password}
           sx={{
             width: '100%',
             '& .MuiFormLabel-root': {
