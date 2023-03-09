@@ -53,10 +53,8 @@ const RegisterComponent = () => {
     registerValidationSchema
       .validate(userValues, { abortEarly: false })
       .then(async () => {
-        if (email !== '' && username !== '' && password !== '') {
-          await createUser(userValues)
-          window.location.href = `/flower-shop`
-        }
+        await createUser(userValues)
+        window.location.href = `/flower-shop`
       })
       .catch((errors: yup.ValidationError) => {
         const validationErrors: { [key: string]: string } = {}
