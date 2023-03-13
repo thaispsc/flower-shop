@@ -77,6 +77,7 @@ const LoginComponent = () => {
           id='outlined-basic'
           label='Username'
           variant='outlined'
+          placeholder='Username'
           error={Boolean(errors.username)}
           helperText={errors.username}
           sx={{
@@ -98,6 +99,7 @@ const LoginComponent = () => {
           label='Password'
           variant='outlined'
           type='password'
+          placeholder='Password'
           error={Boolean(errors.password)}
           helperText={errors.password}
           sx={{
