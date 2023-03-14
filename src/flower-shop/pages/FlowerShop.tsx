@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material'
+import { Box, Container, Grid } from '@mui/material'
 import Banner from '../ui/banner/Banner'
 import { BestSellers } from '../ui/best-sellers/BestSellers'
 import { FlowerCard } from '../ui/flower-card/FlowerCard'
@@ -17,13 +17,18 @@ const FlowerShop = ({ flowers }: FlowerShopProps) => {
       <Container maxWidth='lg' sx={{ marginTop: '175px' }}>
         <Banner />
         <BestSellers />
-        <Box display='flex' marginTop={4} justifyContent='space-between'>
+        <Grid
+          container
+          display='flex'
+          marginTop={4}
+          justifyContent='space-between'
+        >
           {bestSellersFlowers.map(flower => (
-            <div key={flower.id}>
+            <Grid item md={2.8} key={flower.id}>
               <FlowerCard flower={flower} />
-            </div>
+            </Grid>
           ))}
-        </Box>
+        </Grid>
       </Container>
     </>
   )
