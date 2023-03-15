@@ -6,7 +6,9 @@ import {
   Grid,
   Link,
   TextField,
+  Theme,
   Typography,
+  useMediaQuery,
 } from '@mui/material'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -16,6 +18,8 @@ import { loginUser } from '../../../services/users'
 import * as yup from 'yup'
 
 const LoginComponent = () => {
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+
   const loginValidationSchema = yup.object().shape({
     username: yup
       .string()
@@ -157,9 +161,11 @@ const LoginComponent = () => {
           </Link>
         </Typography>
       </Card>
-      <Box height={633}>
-        <Image src={LoginFlower} alt='Flower' width={576} height={633} />
-      </Box>
+      {!isMobile && (
+        <Box height={633}>
+          <Image src={LoginFlower} alt='Flower' width={576} height={633} />
+        </Box>
+      )}
     </Grid>
   )
 }
