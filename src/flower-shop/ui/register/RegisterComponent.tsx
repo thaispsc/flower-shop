@@ -6,7 +6,9 @@ import {
   Grid,
   Link,
   TextField,
+  Theme,
   Typography,
+  useMediaQuery,
 } from '@mui/material'
 import Image from 'next/image'
 import RegisterFlower from 'src/assets/images/RegisterFlower.jpg'
@@ -15,6 +17,8 @@ import { createUser } from '../../../services/users'
 import * as yup from 'yup'
 
 const RegisterComponent = () => {
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+
   const registerValidationSchema = yup.object().shape({
     email: yup
       .string()
@@ -184,9 +188,11 @@ const RegisterComponent = () => {
           </Link>
         </Typography>
       </Card>
-      <Box height={633}>
-        <Image src={RegisterFlower} alt='Flower' width={576} height={633} />
-      </Box>
+      {!isMobile && (
+        <Box height={633}>
+          <Image src={RegisterFlower} alt='Flower' width={576} height={633} />
+        </Box>
+      )}
     </Grid>
   )
 }
