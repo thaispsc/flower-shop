@@ -46,7 +46,7 @@ const RegisterComponent = () => {
     setPassword(event.target.value)
   }
 
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState<{ [key: string]: string }>({})
 
   const registerUser = async () => {
     const userValues = { email, username, password }
