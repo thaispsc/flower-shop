@@ -38,9 +38,7 @@ const LoginComponent = () => {
     setPassword(event.target.value)
   }
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>(
-    {} as { [key: string]: string },
-  )
+  const [errors, setErrors] = useState<{ [key: string]: string }>({})
 
   const SignInUser = async () => {
     const userValues = { username, password }
