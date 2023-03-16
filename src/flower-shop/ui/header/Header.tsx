@@ -83,7 +83,7 @@ const Header = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link href='/flower-shop' underline='none'>
+                <Link href='/shop' underline='none'>
                   <Typography>Shop</Typography>
                 </Link>
               </MenuItem>
