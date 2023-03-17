@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import RegisterComponent from '../../src/flower-shop/ui/register/RegisterComponent'
 import { createUser } from '../../src/services/users'
+import { ThemeProvider } from '@mui/material'
+import theme from '../../src/lib/theme'
 
 jest.mock('../../src/services/users', () => ({
   createUser: jest.fn(),
@@ -30,7 +32,11 @@ describe('<RegisterComponent>', () => {
   }
 
   it('should create an user when the register button is clicked', async () => {
-    render(<RegisterComponent />)
+    render(
+      <ThemeProvider theme={theme}>
+        <RegisterComponent />
+      </ThemeProvider>,
+    )
 
     const email = 'thaispcavalcante@gmail.com'
     const username = 'thaispc'
