@@ -15,6 +15,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 import IconButton from '@mui/material/IconButton'
 import { UserIcon } from './UserIcon'
 import { CartIcon } from './CartIcon'
+import { LogoutIcon } from './LogoutIcon'
+import { useAuthContext } from '../../../contexts/AuthContext'
 
 const PagesLinks = [
   { name: 'Home', link: '/flower-shop' },
@@ -32,6 +34,10 @@ const Header = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
   }
+
+  const { isAuthenticated } = useAuthContext()
+  const { logout } = useAuthContext()
+
   return (
     <AppBar color='secondary' elevation={0}>
       <Container maxWidth='lg'>
@@ -132,11 +138,20 @@ const Header = () => {
             ))}
           </Box>
           <Box>
-            <IconButton>
-              <Link href='/login' underline='none'>
-                <UserIcon />
-              </Link>
-            </IconButton>
+            {!isAuthenticated && (
+              <IconButton>
+                <Link href='/login' underline='none'>
+                  <UserIcon />
+                </Link>
+              </IconButton>
+            )}
+            {isAuthenticated && (
+              <IconButton>
+                <Link href='/login' onClick={logout}>
+                  <LogoutIcon />
+                </Link>
+              </IconButton>
+            )}
             <IconButton>
               <CartIcon />
             </IconButton>
