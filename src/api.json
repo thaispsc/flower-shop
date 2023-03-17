@@ -316,5 +316,8 @@
       "password": "12345",
       "id": "8tuT7p9"
     }
-  ]
+  ],
+  "auth": {
+    "accessToken": "aaaaa.bbbbbb.cccccc"
+  }
 }
