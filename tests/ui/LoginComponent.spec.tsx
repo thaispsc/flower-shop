@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import LoginComponent from '../../src/flower-shop/ui/login/LoginComponent'
 import { loginUser } from '../../src/services/users'
+import { ThemeProvider } from '@mui/material'
+import theme from '../../src/lib/theme'
 
 jest.mock('../../src/services/users', () => ({
   loginUser: jest.fn(),
@@ -25,7 +27,11 @@ describe('<LoginComponent>', () => {
   }
 
   it('should login an user when the login button is clicked', async () => {
-    render(<LoginComponent />)
+    render(
+      <ThemeProvider theme={theme}>
+        <LoginComponent />
+      </ThemeProvider>,
+    )
 
     const username = 'thaispc'
     const password = '123456'
