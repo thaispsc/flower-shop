@@ -14,11 +14,14 @@ import Image from 'next/image'
 import { useState } from 'react'
 import LoginFlower from 'src/assets/images/LoginFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
-import { loginUser } from '../../../services/users'
+import { getUser, loginUser } from '../../../services/users'
 import * as yup from 'yup'
+import { useAuthContext } from '../../../contexts/AuthContext'
 
 const LoginComponent = () => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+
+  const { login } = useAuthContext()
 
   const loginValidationSchema = yup.object().shape({
     username: yup
@@ -49,8 +52,13 @@ const LoginComponent = () => {
     loginValidationSchema
       .validate(userValues, { abortEarly: false })
       .then(async () => {
-        await loginUser(userValues)
-        window.location.href = `/flower-shop`
+        const userData = await getUser(userValues)
+        if (userData.length !== 0) {
+          login(userValues)
+          window.location.href = `/flower-shop`
+        } else {
+          setErrors({ userError: 'Usuário não encontrado' })
+        }
       })
       .catch((errors: yup.ValidationError) => {
         const validationErrors: { [key: string]: string } = {}
@@ -96,6 +104,7 @@ const LoginComponent = () => {
             marginTop: '50px',
             marginBottom: '20px',
           }}
+          onKeyDown={() => setErrors({ username: '' })}
           onChange={handleUsernameChange}
         />
         <TextField
@@ -116,12 +125,13 @@ const LoginComponent = () => {
               fontSize: '18px',
             },
           }}
+          onKeyDown={() => setErrors({ password: '' })}
           onChange={handlePasswordChange}
         />
         <Box
           display='flex'
           alignItems='center'
-          marginBottom={8}
+          marginBottom={4}
           marginTop='20px'
         >
           <Checkbox />
@@ -129,12 +139,26 @@ const LoginComponent = () => {
             Remember me
           </Typography>
         </Box>
+        {errors.userError && (
+          <Box>
+            <Typography fontSize='20px' color='#cf0505' textAlign='center'>
+              That account doesn't exist.
+            </Typography>
+            <Typography fontSize='20px' color='#cf0505' textAlign='center'>
+              Enter a different account or{' '}
+              <Link href='/register' underline='none'>
+                get a new one!
+              </Link>
+            </Typography>
+          </Box>
+        )}
         <Button
           variant='contained'
           color='info'
           disableElevation
           sx={{
             width: '100%',
+            marginTop: '32px',
             paddingY: '13px',
             '&:hover': {
               backgroundColor: '#000000',
