@@ -17,10 +17,11 @@ describe('createUser', () => {
 
     mockServer.use(...[mockedCreateUserEndpoint])
 
+    const email = userVariant.email
     const username = userVariant.username
     const password = userVariant.password
 
-    const registeredUser = await createUser({ username, password })
+    const registeredUser = await createUser({ email, username, password })
 
     expect(registeredUser).toHaveProperty('id', userVariant.id)
   })
