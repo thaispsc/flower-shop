@@ -14,7 +14,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import LoginFlower from 'src/assets/images/LoginFlower.jpg'
 import { HomeIcon } from '../../../lib/components/HomeIcon'
-import { getUser, loginUser } from '../../../services/users'
+import { getUser } from '../../../services/users'
 import * as yup from 'yup'
 import { useAuthContext } from '../../../contexts/AuthContext'
 
