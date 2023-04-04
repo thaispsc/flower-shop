@@ -64,6 +64,23 @@ describe('<LoginComponent>', () => {
     ).toBeVisible()
   })
 
+  it('should display error message if password is less than 6 characters', async () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <LoginComponent />
+      </ThemeProvider>,
+    )
+
+    await typePassword('12345')
+    await submitLoginForm()
+    await waitFor(() => {
+      screen.getByText('Password must be at least 6 characters')
+    })
+    expect(
+      screen.getByText('Password must be at least 6 characters'),
+    ).toBeVisible()
+  })
+
   // it('should login an user when the login button is clicked', async () => {
   //   const { login } = useAuthContext()
   //   render(
