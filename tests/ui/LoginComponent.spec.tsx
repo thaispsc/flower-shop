@@ -47,6 +47,23 @@ describe('<LoginComponent>', () => {
     ).toBeVisible()
   })
 
+  it('should display error message if username is less than 3 characters', async () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <LoginComponent />
+      </ThemeProvider>,
+    )
+
+    await typeUsername('jo')
+    await submitLoginForm()
+    await waitFor(() => {
+      screen.getByText('Username must be at least 3 characters')
+    })
+    expect(
+      screen.getByText('Username must be at least 3 characters'),
+    ).toBeVisible()
+  })
+
   // it('should login an user when the login button is clicked', async () => {
   //   const { login } = useAuthContext()
   //   render(
