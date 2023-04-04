@@ -5,11 +5,16 @@ import { ThemeProvider } from '@mui/material'
 import theme from '../../src/lib/theme'
 import LoginComponent from '../../src/flower-shop/ui/login/LoginComponent'
 import { useAuthContext } from '../../src/contexts/AuthContext'
+import { getUser } from '../../src/services/users'
 
 jest.mock('../../src/contexts/AuthContext', () => ({
   useAuthContext: () => ({
     login: jest.fn(),
   }),
+}))
+
+jest.mock('../../src/services/users', () => ({
+  getUser: jest.fn(() => []),
 }))
 
 describe('<LoginComponent>', () => {
@@ -81,6 +86,21 @@ describe('<LoginComponent>', () => {
     ).toBeVisible()
   })
 
+  test('should display error message if username and password are incorrect', async () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <LoginComponent />
+      </ThemeProvider>,
+    )
+
+    await typeUsername('test Username')
+    await typePassword('654321')
+    await submitLoginForm()
+    await waitFor(() => {
+      screen.getByText("That account doesn't exist.")
+    })
+    expect(screen.getByText("That account doesn't exist.")).toBeVisible()
+  })
   // it('should login an user when the login button is clicked', async () => {
   //   const { login } = useAuthContext()
   //   render(
